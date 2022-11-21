@@ -1,3 +1,5 @@
+<img alt="GitHub" src="https://img.shields.io/github/license/Matatika/dataset-component-example">
+
 # Matatika Dataset Component Example
 
 This repo contains the code for an example Matatika dataset renderer. It works against a local catalog to get and render a dataset from your workspace.
