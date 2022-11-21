@@ -36,6 +36,9 @@ const App: FunctionComponent = () => {
     api.get(requestLink).then(resp => {
       setDatasetData(resp.data)
       setGetDatasetReady(true)
+    }).catch(error => {
+      console.log(error)
+      setGetDatasetReady(true)
     })
   }
 
@@ -61,7 +64,7 @@ const App: FunctionComponent = () => {
           onChange={handleDatasetIdChange}
           variant="outlined"
           margin="dense"
-          label="Dataset"
+          label="Dataset ID"
         />
         <div className='button-div'>
           <Button
