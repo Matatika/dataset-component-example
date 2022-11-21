@@ -38,14 +38,16 @@ const ChartjsChart: FunctionComponent<ChartjsChartProps> = (
     options,
     dataLink,
     rawData,
-    metadata
+    metadata,
+    token
   } = props
   const prevProps = usePrevious({
     chartType,
     options,
     dataLink,
     rawData,
-    metadata
+    metadata,
+    token
   })
   const metadataObj = new Metadata(metadata)
   const [chartData, setChartData] = useState({
@@ -85,7 +87,7 @@ const ChartjsChart: FunctionComponent<ChartjsChartProps> = (
       const api = axios.create({
         baseURL: 'http://localhost:8080/api/'
       })
-      api.defaults.headers.common['Authorization'] = 'bearer ' + props.token
+      api.defaults.headers.common['Authorization'] = 'bearer ' + token
       // we fetch and transform here as the target format needs to be accepted by ChartJS
       api.get(dataLink.href)
         .then((resp: any) => {
@@ -103,7 +105,7 @@ const ChartjsChart: FunctionComponent<ChartjsChartProps> = (
     return () => {
       componentIsMounted.current = false
     }
-  }, [dataLink, rawData, chartType, metadata])
+  }, [dataLink, rawData, chartType, metadata, token])
 
   let chart: any = null;
   const chartOptions = buildChartOptions(

@@ -108,7 +108,7 @@ export const updateChartData = (
     datasets: []
   }
   if (results && results.length > 0) {
-    if (results.length == 1 && results[0].error) {
+    if (results.length === 1 && results[0].error) {
       console.log(results[0].error)
     }
     if (metadata) {
