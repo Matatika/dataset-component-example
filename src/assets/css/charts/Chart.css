@@ -1,0 +1,8 @@
+.chart-no-metadata {
+    background-color: white;
+    padding: 5px;
+    word-break: break-word;
+    color: red;
+    white-space:pre-wrap;
+    font-family: monospace;
+}
